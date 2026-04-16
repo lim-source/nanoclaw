@@ -13,10 +13,14 @@ logs/
 groups/*
 !groups/main/
 !groups/global/
+!groups/whatsapp_main/
 groups/main/*
 groups/global/*
+groups/whatsapp_main/*
 !groups/main/CLAUDE.md
 !groups/global/CLAUDE.md
+!groups/whatsapp_main/CLAUDE.md
+!groups/whatsapp_main/memory.md
 
 # Secrets
 *.keys.json

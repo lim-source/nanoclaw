@@ -3,8 +3,8 @@
 
 // discord
 
-// gmail
-import './gmail.js';
+// gmail (tool-only mode — channel polling disabled)
+// import './gmail.js';
 
 // slack
 

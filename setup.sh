@@ -88,9 +88,36 @@ install_deps() {
     return
   fi
 
+  # Patch node-gyp xcode_emulation.py if CLT package receipt is missing (Node 24 / macOS Sequoia)
+  local gyp_file="$PROJECT_ROOT/node_modules/node-gyp/gyp/pylib/gyp/xcode_emulation.py"
+  if [ -f "$gyp_file" ] && grep -q 'raise GypError("No Xcode or CLT version detected!")' "$gyp_file" 2>/dev/null; then
+    python3 - "$gyp_file" << 'PYEOF'
+import sys
+path = sys.argv[1]
+old = '            raise GypError("No Xcode or CLT version detected!")'
+new = '            try:\n                GetStdout(["clang", "--version"])\n                version = "16.0.0"\n                build = "0"\n            except (GypError, OSError):\n                raise GypError("No Xcode or CLT version detected!")'
+with open(path) as f:
+    content = f.read()
+if old in content:
+    with open(path, 'w') as f:
+        f.write(content.replace(old, new, 1))
+PYEOF
+    log "Patched node-gyp xcode_emulation.py for missing CLT receipt"
+  fi
+
+  # Rebuild better-sqlite3 if binary is missing
+  if ! node -e "new (require('better-sqlite3'))(':memory:')" >> "$LOG_FILE" 2>&1; then
+    log "better-sqlite3 binary missing — rebuilding"
+    local sdk_root
+    sdk_root=$(xcrun --show-sdk-path 2>/dev/null || echo '/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk')
+    SDKROOT="$sdk_root" node "$PROJECT_ROOT/node_modules/node-gyp/bin/node-gyp.js" \
+      --directory "$PROJECT_ROOT/node_modules/better-sqlite3" rebuild --release >> "$LOG_FILE" 2>&1
+    log "better-sqlite3 rebuild done"
+  fi
+
   # Verify native module (better-sqlite3)
   log "Verifying native modules"
-  if node -e "require('better-sqlite3')" >> "$LOG_FILE" 2>&1; then
+  if node -e "new (require('better-sqlite3'))(':memory:')" >> "$LOG_FILE" 2>&1; then
     NATIVE_OK="true"
     log "better-sqlite3 loads OK"
   else
