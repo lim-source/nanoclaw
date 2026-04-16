@@ -488,14 +488,12 @@ async function runQuery(
           },
         },
         gmail: {
-          command: 'npx',
-          args: ['-y', '@gongrzhe/server-gmail-autoauth-mcp'],
+          command: 'gmail-mcp',
+          args: [],
         },
         google_calendar: {
-          command: 'npx',
+          command: 'google-calendar-mcp',
           args: [
-            '-y',
-            '@cocal/google-calendar-mcp',
             'start',
             '--enable-tools',
             'list-calendars,list-events,search-events,get-current-time',
@@ -508,8 +506,8 @@ async function runQuery(
         ...(process.env.ASANA_ACCESS_TOKEN
           ? {
               asana: {
-                command: 'npx',
-                args: ['-y', '@roychri/mcp-server-asana'],
+                command: 'mcp-server-asana',
+                args: [],
                 env: {
                   ASANA_ACCESS_TOKEN: process.env.ASANA_ACCESS_TOKEN,
                 },
