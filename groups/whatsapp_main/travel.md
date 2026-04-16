@@ -72,8 +72,58 @@ When Limor asks to plan a trip:
    - Check Limor's Google Calendar for the travel dates before confirming anything
    - Flag any conflicts
 
-6. **Output format**
-   - Flight options (2-3 choices with times, airlines, price)
-   - Hotel recommendation (1-2 options with location context)
-   - Transport plan
-   - Any flags or issues noticed
+6. **Create Asana tasks for everything that needs manual action**
+   - שאול cannot book directly — for every item that requires Limor to take action, create a task in Asana InTray
+   - Examples: "Book flight TLV→JFK May 12", "Reserve hotel near [address]", "Check United miles balance before booking"
+   - Each task should have enough detail to act on without re-researching (flight number, price, link)
+   - Tag time-sensitive tasks with a due date
+
+7. **Create a travel plan MD file**
+   - Save it to `/workspace/extra/shaul-work/travel-plans/[destination]-[date].md`
+   - Format: clean, readable, shareable with family
+   - Include everything they need to know: where you're going, when you're leaving/returning, how to reach you, hotel name + address
+   - Template below
+
+---
+
+## Travel Plan File Template
+
+```markdown
+# ✈️ Trip to [City], [Country] — [Month Year]
+
+## Overview
+- **Dates:** [departure date] → [return date]
+- **Purpose:** [work / conference / meetings]
+- **Destination:** [City, Country]
+
+## Flights
+| | Outbound | Return |
+|---|---|---|
+| **Flight** | [airline + flight number] | [airline + flight number] |
+| **Departs** | [date, time, airport] | [date, time, airport] |
+| **Arrives** | [date, time, airport] | [date, time, airport] |
+| **Booking ref** | [reference] | [reference] |
+
+## Hotel
+- **Name:** [hotel name]
+- **Address:** [full address]
+- **Check-in:** [date]
+- **Check-out:** [date]
+- **Booking ref:** [reference]
+
+## Getting Around
+- **Airport → Hotel:** [transport method + details]
+- **During trip:** [Uber / subway / walking]
+
+## How to Reach Me
+- **Phone:** +972502656256
+- **Email:** lim@echowisdom.ai
+- **Hotel phone:** [if available]
+
+## Notes
+[anything else relevant — visa, time zone difference, emergency contacts]
+```
+
+---
+
+Always create the travel plan file even if booking isn't complete yet — mark unconfirmed items as `[TBD]` and update as things get confirmed.
