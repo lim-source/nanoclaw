@@ -8,6 +8,7 @@ import os from 'os';
 import path from 'path';
 
 import {
+  ASANA_ACCESS_TOKEN,
   CONTAINER_IMAGE,
   CONTAINER_MAX_OUTPUT_SIZE,
   CONTAINER_TIMEOUT,
@@ -264,6 +265,11 @@ async function buildContainerArgs(
 
   // Pass host timezone so container's local time matches the user's
   args.push('-e', `TZ=${TIMEZONE}`);
+
+  // Asana integration
+  if (ASANA_ACCESS_TOKEN) {
+    args.push('-e', `ASANA_ACCESS_TOKEN=${ASANA_ACCESS_TOKEN}`);
+  }
 
   // OneCLI gateway handles credential injection — containers never see real secrets.
   // The gateway intercepts HTTPS traffic and injects API keys or OAuth tokens.

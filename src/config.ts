@@ -11,6 +11,7 @@ const envConfig = readEnvFile([
   'ONECLI_URL',
   'ONECLI_API_KEY',
   'TZ',
+  'ASANA_ACCESS_TOKEN',
 ]);
 
 export const ASSISTANT_NAME =
@@ -55,6 +56,8 @@ export const CONTAINER_MAX_OUTPUT_SIZE = parseInt(
 export const ONECLI_URL = process.env.ONECLI_URL || envConfig.ONECLI_URL;
 export const ONECLI_API_KEY =
   process.env.ONECLI_API_KEY || envConfig.ONECLI_API_KEY;
+export const ASANA_ACCESS_TOKEN =
+  process.env.ASANA_ACCESS_TOKEN || envConfig.ASANA_ACCESS_TOKEN;
 export const MAX_MESSAGES_PER_PROMPT = Math.max(
   1,
   parseInt(process.env.MAX_MESSAGES_PER_PROMPT || '10', 10) || 10,

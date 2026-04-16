@@ -470,6 +470,7 @@ async function runQuery(
         'NotebookEdit',
         'mcp__nanoclaw__*',
         'mcp__gmail__*',
+        'mcp__asana__*',
       ],
       env: sdkEnv,
       permissionMode: 'bypassPermissions',
@@ -489,6 +490,17 @@ async function runQuery(
           command: 'npx',
           args: ['-y', '@gongrzhe/server-gmail-autoauth-mcp'],
         },
+        ...(process.env.ASANA_ACCESS_TOKEN
+          ? {
+              asana: {
+                command: 'npx',
+                args: ['-y', '@roychri/mcp-server-asana'],
+                env: {
+                  ASANA_ACCESS_TOKEN: process.env.ASANA_ACCESS_TOKEN,
+                },
+              },
+            }
+          : {}),
       },
       hooks: {
         PreCompact: [
