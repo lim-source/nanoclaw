@@ -3,8 +3,8 @@
 
 // discord
 
-// gmail (tool-only mode — channel polling disabled)
-// import './gmail.js';
+// gmail (inbox monitoring — forwards unread emails to main group)
+import './gmail.js';
 
 // slack
 
