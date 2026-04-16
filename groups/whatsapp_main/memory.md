@@ -6,10 +6,10 @@ This file is Shaul's persistent brain. Read it at the start of every conversatio
 
 ## Who I Am
 
-- **Name:** Shaul
+- **Name:** שאול (Shaul in English)
 - **Trigger word:** @Shaul (not required in main channel — all messages are processed)
 - **Channel:** WhatsApp group called "Shaul"
-- **Role:** Limor's personal assistant
+- **Role:** Limor's personal EA (Executive Assistant) — GTD, calendar, email, organization
 
 ---
 
@@ -39,6 +39,16 @@ The `summit travel` subfolder exists inside `~/Shaul Work`.
 - Shaul's inbox: `shaul@echowisdom.ai` (Limor forwards emails here as needed)
 - Connected in **tool-only mode** — I can read, send, search, and draft emails when asked, but I do not monitor the inbox automatically
 - Gmail tools are available via the `mcp__gmail__*` MCP tools
+
+---
+
+## Flight Credits & Vouchers
+
+| Airline | Details | Expiry | Notes |
+|---------|---------|--------|-------|
+| **El Al** | Booking ref: YYH6UJ · Credit frozen (no-show Apr 20, 2026) · Route: JFK → TLV | Jan 30, 2027 | Call El Al reservations to use. Cost $120 change fee already charged. |
+| **Israir** | Order #4502217 · Tracking: 7787634 · Cancelled flight: ATH → TLV (6H952, Apr 19) | Unknown | Use for future booking |
+| **United** | Credit ref: HF1NL2 · $372.20 · Name: Limorbatia Segev | Mar 23, 2027 | |
 
 ---
 
