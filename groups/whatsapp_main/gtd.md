@@ -67,6 +67,19 @@ After capture (or when Limor asks to process her inbox):
 ### The 2-minute rule
 If it takes under 2 minutes → tell Limor to do it now, don't add to Asana.
 
+### Morning Triage (every day)
+Runs every morning. Goal: the **must** section contains ONLY tasks that truly must be done by end of today — no more, no less.
+
+Steps:
+1. Look at everything in **must**
+2. For each task — ask: "Does this genuinely have to be done today, or is it just important?"
+   - Has to be done today → stays in `must`
+   - Important but not today-critical → move to `Today`, `backlog short`, or `backlog long`
+   - Waiting on someone → move to `waiting for`
+   - No longer relevant → complete or delete
+3. Look at **Today** and **backlog short** — anything that *must* happen today? Move it up to `must`
+4. Result: `must` is a short, honest list. If everything is "must", nothing is.
+
 ### Weekly Review (remind Sundays)
 1. Clear InTray to zero — triage everything
 2. Check every section for stale tasks
