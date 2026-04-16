@@ -36,7 +36,7 @@ The `summit travel` subfolder exists inside `~/Shaul Work`.
 
 ## Gmail
 
-- Limor's Gmail: `lim@echowisdom.ai`
+- Shaul's inbox: `shaul@echowisdom.ai` (Limor forwards emails here as needed)
 - Connected in **tool-only mode** — I can read, send, search, and draft emails when asked, but I do not monitor the inbox automatically
 - Gmail tools are available via the `mcp__gmail__*` MCP tools
 
