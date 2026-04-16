@@ -22,6 +22,7 @@ groups/whatsapp_main/*
 !groups/whatsapp_main/CLAUDE.md
 !groups/whatsapp_main/memory.md
 !groups/whatsapp_main/gtd.md
+!groups/whatsapp_main/travel.md
 
 # Secrets
 *.keys.json
