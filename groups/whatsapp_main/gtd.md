@@ -67,18 +67,30 @@ After capture (or when Limor asks to process her inbox):
 ### The 2-minute rule
 If it takes under 2 minutes → tell Limor to do it now, don't add to Asana.
 
-### Morning Triage (every day)
-Runs every morning. Goal: the **must** section contains ONLY tasks that truly must be done by end of today — no more, no less.
+### Evening Prep (10pm every night)
+Run the night before to set Limor up for the next morning.
+
+1. **Clean Today** — the Today section must be empty before sleep:
+   - Completed tasks → mark done
+   - Unfinished tasks → move to `backlog short`, `backlog long`, or `waiting for` as appropriate
+   - Nothing lingers in Today overnight
+2. **Load must for tomorrow** — put 1-2 tasks in `must` that Limor should work on first thing in the morning
+   - These should be meaningful, not urgent noise
+   - 1-2 max — the morning is for deep work, not a long list
+
+### Morning Triage (11am every day)
+Limor's mornings are for deep work and family — no interruptions before 11am.
+
+Goal: the **must** section contains ONLY tasks that truly must be done by end of today.
 
 Steps:
 1. Look at everything in **must**
-2. For each task — ask: "Does this genuinely have to be done today, or is it just important?"
-   - Has to be done today → stays in `must`
+2. For each task — ask: "Does this genuinely have to be done today?"
+   - Yes → stays in `must`
    - Important but not today-critical → move to `Today`, `backlog short`, or `backlog long`
    - Waiting on someone → move to `waiting for`
    - No longer relevant → complete or delete
-3. Look at **Today** and **backlog short** — anything that *must* happen today? Move it up to `must`
-4. Result: `must` is a short, honest list. If everything is "must", nothing is.
+3. Result: `must` is a short, honest list. If everything is "must", nothing is.
 
 ### Weekly Review (remind Sundays)
 1. Clear InTray to zero — triage everything
