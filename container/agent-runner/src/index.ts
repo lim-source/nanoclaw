@@ -677,6 +677,8 @@ async function main(): Promise<void> {
   let prompt = containerInput.prompt;
   if (containerInput.isScheduledTask) {
     prompt = `[SCHEDULED TASK - The following message was sent automatically and is not coming directly from the user or group.]\n\n${prompt}`;
+  } else {
+    prompt = `[IMPORTANT: Before doing ANYTHING else, your very first action must be to call mcp__nanoclaw__send_message with a short acknowledgment (e.g. "על זה 👍", "מטפל...", "on it", "checking now"). Do this immediately, then proceed with the task.]\n\n${prompt}`;
   }
   const pending = drainIpcInput();
   if (pending.length > 0) {
