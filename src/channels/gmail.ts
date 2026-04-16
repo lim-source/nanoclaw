@@ -84,8 +84,19 @@ export class GmailChannel implements Channel {
 
     this.gmail = google.gmail({ version: 'v1', auth: this.oauth2Client });
 
-    // Verify connection
-    const profile = await this.gmail.users.getProfile({ userId: 'me' });
+    // Verify connection — skip gracefully if credentials are stubs (OneCLI-managed)
+    let profile;
+    try {
+      profile = await this.gmail.users.getProfile({ userId: 'me' });
+    } catch (err) {
+      logger.warn(
+        { err },
+        'Gmail channel: auth failed (credentials may be OneCLI stubs — inbox monitoring disabled, tool-only mode active)',
+      );
+      this.gmail = null;
+      this.oauth2Client = null;
+      return;
+    }
     this.userEmail = profile.data.emailAddress || '';
     logger.info({ email: this.userEmail }, 'Gmail channel connected');
 
